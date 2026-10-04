@@ -1,16 +1,25 @@
-# hidroanalise
+# 💧 HidroAnálise
 
-A new Flutter project.
+Aplicativo para apoio à análise, simulação e sustentabilidade de poços tubulares.
 
-## Getting Started
+## O que o app faz
 
-This project is a starting point for a Flutter application.
+O HidroAnálise ajuda engenheiros, geólogos e técnicos a calcular e simular dados de poços de água:
 
-A few resources to get you started if this is your first Flutter project:
+- Calcula rebaixamento, vazão específica e volumes de água (diário, mensal e anual)
+- Avalia a sustentabilidade do poço, indicando se a vazão requerida é segura ou não
+- Estima a transmissividade do aquífero
+- Mostra um perfil visual do poço, com as camadas do solo, o nível da água e a bomba
+- Traz uma calculadora com as principais fórmulas de hidrogeologia, para consultas rápidas
+- Tem uma biblioteca com explicações passo a passo sobre os conceitos de hidrogeologia
+- Permite criar conta, fazer login e editar o perfil
+- Funciona em tema claro, escuro ou automático
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Sobre as branches deste repositório
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **main** — versão estável do app
+- **development** — onde novas funcionalidades e ajustes são desenvolvidos antes de ir para a main
+
+---
+
+Desenvolvido por Flaviane Guimarães.
