@@ -37,4 +37,19 @@ class LocalStore {
           orElse: () => ThemeMode.dark);
 
   Future<void> saveTheme(ThemeMode m) => _p.setString('theme', m.name);
+
+  // ---------- credenciais (login/cadastro) ----------
+
+  Map<String, String>? loadCredentials() {
+    final raw = _p.getString('credentials');
+    if (raw == null) return null;
+    try {
+      return Map<String, String>.from(jsonDecode(raw) as Map);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<void> saveCredentials(String email, String hash) =>
+      _p.setString('credentials', jsonEncode({'email': email, 'hash': hash}));
 }
