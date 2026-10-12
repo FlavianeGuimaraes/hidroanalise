@@ -10,7 +10,9 @@ dependencies:
   crypto: ^3.0.7
   flutter:
     sdk: flutter
+  flutter_map: ^8.3.2
   http: ^1.6.0
+  latlong2: ^0.10.1
   provider: ^6.1.2
   shared_preferences: ^2.2.3
 

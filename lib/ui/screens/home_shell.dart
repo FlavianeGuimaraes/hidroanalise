@@ -3,6 +3,7 @@ import 'home_screen.dart';
 import 'library_screen.dart';
 import 'projects_screen.dart';
 import 'settings_screens.dart';
+import 'map_screen.dart';
 
 class HomeShell extends StatefulWidget {
   const HomeShell({super.key});

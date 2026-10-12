@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../core/app_theme.dart';
 import '../../core/format.dart';
@@ -56,57 +55,11 @@ class ProjectsScreen extends StatelessWidget {
                             ],
                           ),
                         );
-                        if (ok == true && context.mounted)
+                        if (ok == true && context.mounted) {
                           context.read<AppState>().deleteProject(p);
+                        }
                       },
                     ),
-                  ),
-                );
-              },
-            ),
-    );
-  }
-}
-
-/// Lista de poços com coordenadas. Para mapa real, use google_maps_flutter.
-class MapScreen extends StatelessWidget {
-  const MapScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final list = context.watch<AppState>().projects;
-    return Scaffold(
-      appBar: AppBar(title: Text('Mapa de poços (${list.length})')),
-      body: list.isEmpty
-          ? const Center(child: Text('Nenhum poço salvo ainda.'))
-          : ListView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: list.length,
-              itemBuilder: (context, i) {
-                final p = list[i];
-                final has = p.lat != null && p.lon != null;
-                return Card(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  child: ListTile(
-                    leading: const Icon(Icons.place, color: AppColors.blue),
-                    title: Text(p.name),
-                    subtitle: Text(has
-                        ? '${fmt(p.lat, 5)}, ${fmt(p.lon, 5)}'
-                        : 'Sem coordenadas — edite o poço para adicionar.'),
-                    trailing: has
-                        ? IconButton(
-                            icon: const Icon(Icons.copy, size: 18),
-                            tooltip: 'Copiar link do Google Maps',
-                            onPressed: () {
-                              Clipboard.setData(ClipboardData(
-                                  text:
-                                      'https://www.google.com/maps?q=${p.lat},${p.lon}'));
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Link copiado!')));
-                            },
-                          )
-                        : null,
                   ),
                 );
               },
