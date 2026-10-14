@@ -3,6 +3,7 @@ import '../../core/app_theme.dart';
 import '../../core/format.dart';
 import '../../domain/hydro_calc.dart';
 import '../widgets/common.dart';
+import 'coordinate_page.dart';
 
 typedef CalcRow = (String label, String value);
 
@@ -103,6 +104,8 @@ class CalculatorHub extends StatelessWidget {
           tile(s.icon, s.title, s.subtitle, CalculatorPage(spec: s)),
         tile(Icons.swap_horiz, 'Conversor de vazão',
             'L/s, m³/h, m³/dia, m³/mês', const ConverterPage()),
+        tile(Icons.public, 'Conversor de coordenadas',
+            'Decimal, graus/min/seg, UTM e MGRS', const CoordinatePage()),
       ]),
     );
   }
